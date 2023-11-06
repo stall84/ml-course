@@ -25,10 +25,11 @@
 - <span style="color:yellow; background-color:black;">The idea is you want to be confident that when you apply your model for the first time (or any time) that it will have never known or been aware of the test set data-points. Thereby giving you confidence you're effectively unit-testing the model. Back to our example. The 80 sales invoices <i>(of the training set)</i> will have been trained up hundreds of times already, but never using the 20 sales invoices we initially reserved/removed.</span>
 
 #### Feature Scaling
+- <span style="color:red;"><strong>Necessary to prevent different column values having disproportionate scales receive proportionate analysis, which often skews toward the column with the larger magnitude or larger scale-values</strong></span>
+- For instance 3 employees (3 rows in this trivial example) have their age-salary attributes analyzed to determine the closer grouping of 2 employees. So the rows are the 3 employees and theres a column for salary, and a column for their age. _compares apple to oranges.. years to dollars.. So it has to be normalized_
 - Note: Only detailing 2 of _many_ scale-methods here. And, these will only be applied to individual _columns_ (in a table layout of data), and never across columns (rows).
 
 - __Normalization:__ Taking the minimum value in a column, then subtracting that value from every other value in the column, then dividing by the diff max value and min values. Will yield a value between 0 and 1 _[0;1]_
-
 
 - __Standardization:__
 - Similar to __Normalization__ but subtracts the average from each value in column, then divides that max - average by the _standard deviation (sigma)_
